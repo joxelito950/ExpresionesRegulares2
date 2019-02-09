@@ -15,6 +15,9 @@ import javax.swing.*;
  */
 public class ExpresionesRegulares {
 
+    public static final String EXITO = "Exito";
+    public static final String FAIL = "FAIL";
+
     public static void compararCadenasabc(String cadena) {
         Pattern patron = Pattern.compile("^[aA]bc.*");
         Matcher buscar = patron.matcher(cadena);
@@ -74,7 +77,34 @@ public class ExpresionesRegulares {
         Pattern patron = Pattern.compile("^([Jj][AaEeOoIiUu])+");
         Matcher match = patron.matcher(cadena);
         if (match.find()) {
-            JOptionPane.showMessageDialog(null, cadena + " es una risa", "Exito", JOptionPane.DEFAULT_OPTION);
+            mostrarMensajeExito(cadena, "es una risa", EXITO, JOptionPane.DEFAULT_OPTION);
+        } else {
+            mostrarMensajeExito(cadena, "no es una risa", FAIL, JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private static void mostrarMensajeExito(String cadena, String mensaje, String exito, int defaultOption) {
+        JOptionPane.showMessageDialog(null, cadena + " " + mensaje, exito, defaultOption);
+    }
+
+    public static void validarNumerosDuplicadosAlFinal(String cadena) {
+        Pattern patron = Pattern.compile("([00]|[11]|[22]|[33]|[44]|[55]|[66]|[77]|[88]|[99])$");
+        Matcher matcher = patron.matcher(cadena);
+        if (matcher.find()) {
+            mostrarMensajeExito(cadena, "la cadena finaliza con 2 numeros repeditos", EXITO, JOptionPane.DEFAULT_OPTION);
+        } else {
+            mostrarMensajeExito(cadena, "la cadena no finaliza con numeros repetidos", FAIL, JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    public static void validarNumeroEntero(String cadena) {
+        Pattern patron = Pattern.compile("^(\\d)*$");
+        Matcher matcher = patron.matcher(cadena);
+        if (matcher.find()) {
+            mostrarMensajeExito(cadena, "la cadena es de enteros", EXITO, JOptionPane.DEFAULT_OPTION);
+        }else{
+            mostrarMensajeExito(cadena,"la cadena no es de numeros enteros", FAIL,JOptionPane.ERROR_MESSAGE);
         }
     }
 }
+

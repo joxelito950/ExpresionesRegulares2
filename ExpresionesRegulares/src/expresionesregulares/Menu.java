@@ -15,18 +15,22 @@ import javax.swing.JOptionPane;
 public class Menu {
 
     public static void main(String[] args) {
-        String menu = "Expresiones regulares\n0.salir\n1.Validar risa\n2.Validar si termina en 2 numeros repetidos\n3.Validar un numero Real\n";
+        String menu = "Expresiones regulares\n0.salir\n1.Validar risa\n2.Validar si termina en 2 numeros repetidos\n3.Validar un Entero\n4.Validar un numero Real\n5.Validar numero binario";
         String cadena;
         int option = obtenerNumeroPorEntrada("", "");
         do {
             switch (option) {
                 case 1:
-                    cadena = JOptionPane.showInputDialog(null, "Ingrese la cadena de risa", "Ingrese datos", JOptionPane.DEFAULT_OPTION);
+                    cadena = getCadena("Ingrese la cadena de risa", "Ingrese datos");
                     ExpresionesRegulares.validarRisa(cadena);
                     break;
                 case 2:
+                    cadena = getCadena("Ingrese la cadena con numeros duplicados al final", "Ingrese datos");
+                    ExpresionesRegulares.validarNumerosDuplicadosAlFinal(cadena);
                     break;
                 case 3:
+                    cadena = getCadena("Ingrese un valor entero numerico", "Ingrese Datos");
+                    ExpresionesRegulares.validarNumeroEntero(cadena);
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opción " + option + " no valida intente de nuevo", "Opción no valida", JOptionPane.INFORMATION_MESSAGE);
@@ -36,9 +40,13 @@ public class Menu {
         } while (option != 0);
     }
 
+    private static String getCadena(String mensaje, String titulo) {
+        return JOptionPane.showInputDialog(null, mensaje, titulo, JOptionPane.DEFAULT_OPTION);
+    }
+
     public static int obtenerNumeroPorEntrada(String titulo, String mensaje) {
         do {
-            String option = JOptionPane.showInputDialog(null, mensaje, titulo, JOptionPane.DEFAULT_OPTION);
+            String option = getCadena(mensaje, titulo);
             try {
                 return Integer.parseInt(option);
             } catch (Exception e) {
