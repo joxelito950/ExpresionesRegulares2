@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 package expresionesregulares;
+
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import javax.swing.*;
 
 
 /**
- *
  * @author sala203
  */
 public class ExpresionesRegulares {
@@ -68,5 +68,13 @@ public class ExpresionesRegulares {
             System.out.println(salida[k]);
         }
         JOptionPane.showMessageDialog(null, salida);
+    }
+
+    public static void validarRisa(String cadena) {
+        Pattern patron = Pattern.compile("^([Jj][AaEeOoIiUu])+");
+        Matcher match = patron.matcher(cadena);
+        if (match.find()) {
+            JOptionPane.showMessageDialog(null, cadena + " es una risa", "Exito", JOptionPane.DEFAULT_OPTION);
+        }
     }
 }
