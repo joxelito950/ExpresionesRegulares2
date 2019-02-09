@@ -17,8 +17,9 @@ public class Menu {
     public static void main(String[] args) {
         String menu = "Expresiones regulares\n0.salir\n1.Validar risa\n2.Validar si termina en 2 numeros repetidos\n3.Validar un Entero\n4.Validar un numero Real\n5.Validar numero binario";
         String cadena;
-        int option = obtenerNumeroPorEntrada("", "");
+        int option = 0;
         do {
+            option = obtenerNumeroPorEntrada("Menu", menu);
             switch (option) {
                 case 1:
                     cadena = getCadena("Ingrese la cadena de risa", "Ingrese datos");
