@@ -15,7 +15,14 @@ import javax.swing.JOptionPane;
 public class Menu {
 
     public static void main(String[] args) {
-        String menu = "Expresiones regulares\n0.salir\n1.Validar risa\n2.Validar si termina en 2 numeros repetidos\n3.Validar un Entero\n4.Validar un numero Real\n5.Validar numero binario";
+        String menu = "Expresiones regulares\n" +
+                "0.salir\n" +
+                "1.Validar risa\n" +
+                "2.Validar si termina en 2 numeros repetidos\n" +
+                "3.Validar un Entero\n" +
+                "4.Validar un numero Real\n" +
+                "5.Validar numero binario\n" +
+                "";
         String cadena;
         int option = 0;
         do {
