@@ -148,7 +148,16 @@ public class ExpresionesRegulares {
         } else {
             mostrarMensajeExito(cadena, "la cadena no es una dirección", FAIL, JOptionPane.ERROR_MESSAGE);
         }
+    }
 
+    public static void validarHora(String cadena) {
+        Pattern patron = Pattern.compile("^((0\\d)|(1[0-2])|(2[0-4])):([0-5]\\d)$");
+        Matcher matcher = patron.matcher(cadena);
+        if (matcher.find()) {
+            mostrarMensajeExito(cadena, "la cadena es una hora", EXITO, JOptionPane.DEFAULT_OPTION);
+        } else {
+            mostrarMensajeExito(cadena, "la cadena no es una hora", FAIL, JOptionPane.ERROR_MESSAGE);
+        }
     }
 }
 
