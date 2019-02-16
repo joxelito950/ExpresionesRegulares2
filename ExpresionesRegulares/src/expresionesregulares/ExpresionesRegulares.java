@@ -159,5 +159,15 @@ public class ExpresionesRegulares {
             mostrarMensajeExito(cadena, "la cadena no es una hora", FAIL, JOptionPane.ERROR_MESSAGE);
         }
     }
+
+    public static void validarNumeroTelefonico(String cadena) {
+        Pattern patron = Pattern.compile("^([2-6]\\d{6})|((914|915)\\d{4})$");
+        Matcher matcher = patron.matcher(cadena);
+        if (matcher.find()) {
+            mostrarMensajeExito(cadena, "la cadena es un número telefonico", EXITO, JOptionPane.DEFAULT_OPTION);
+        } else {
+            mostrarMensajeExito(cadena, "la cadena no es un número telefonico", FAIL, JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }
 
