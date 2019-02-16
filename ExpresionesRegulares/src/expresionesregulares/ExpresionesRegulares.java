@@ -106,5 +106,15 @@ public class ExpresionesRegulares {
             mostrarMensajeExito(cadena,"la cadena no es de numeros enteros", FAIL,JOptionPane.ERROR_MESSAGE);
         }
     }
+
+    public static void validarNumeroReal(String cadena) {
+        Pattern patron = Pattern.compile("^\\d*(\\.\\d*)?$");
+        Matcher matcher = patron.matcher(cadena);
+        if (matcher.find()) {
+            mostrarMensajeExito(cadena, "la cadena es de enteros", EXITO, JOptionPane.DEFAULT_OPTION);
+        }else{
+            mostrarMensajeExito(cadena,"la cadena no es de numeros enteros", FAIL,JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }
 

@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
  */
 public class Menu {
 
+    public static final String INGRESE_DATOS = "Ingrese Datos";
+
     public static void main(String[] args) {
         String menu = "Expresiones regulares\n" +
                 "0.salir\n" +
@@ -33,16 +35,20 @@ public class Menu {
             option = obtenerNumeroPorEntrada("Menu", menu);
             switch (option) {
                 case 1:
-                    cadena = getCadena("Ingrese la cadena de risa", "Ingrese datos");
+                    cadena = getCadena("Ingrese la cadena de risa", INGRESE_DATOS);
                     ExpresionesRegulares.validarRisa(cadena);
                     break;
                 case 2:
-                    cadena = getCadena("Ingrese la cadena con numeros duplicados al final", "Ingrese datos");
+                    cadena = getCadena("Ingrese la cadena con numeros duplicados al final", INGRESE_DATOS);
                     ExpresionesRegulares.validarNumerosDuplicadosAlFinal(cadena);
                     break;
                 case 3:
-                    cadena = getCadena("Ingrese un valor entero numerico", "Ingrese Datos");
+                    cadena = getCadena("Ingrese un valor entero numerico", INGRESE_DATOS);
                     ExpresionesRegulares.validarNumeroEntero(cadena);
+                    break;
+                case 4:
+                    cadena = getCadena("Ingrese un valor numerico real",INGRESE_DATOS);
+                    ExpresionesRegulares.validarNumeroReal(cadena);
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opción " + option + " no valida intente de nuevo", "Opción no valida", JOptionPane.INFORMATION_MESSAGE);
