@@ -5,6 +5,9 @@
  */
 package expresionesregulares;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import javax.swing.*;
@@ -138,13 +141,14 @@ public class ExpresionesRegulares {
     }
 
     public static void validarDireccion(String cadena) {
-        Pattern patron = Pattern.compile("^()$");
+        Pattern patron = Pattern.compile("^(cll|crr|calle|carrera|carretera|circular|circunvalar|avenida|transversal)\\d{1,3}(\\w|\\W)?(norte|sur|este|oeste|oriente|occidente)?(#\\d{1,3})(\\w|\\W)?(norte|sur|este|oeste|oriente|occidente)?(-\\d{1,3})$");
         Matcher matcher = patron.matcher(cadena);
         if (matcher.find()) {
             mostrarMensajeExito(cadena, "la cadena es una dirección", EXITO, JOptionPane.DEFAULT_OPTION);
         } else {
             mostrarMensajeExito(cadena, "la cadena no es una dirección", FAIL, JOptionPane.ERROR_MESSAGE);
         }
+
     }
 }
 
