@@ -63,8 +63,12 @@ public class Menu {
                     ExpresionesRegulares.validarDireccion(cadena);
                     break;
                 case 8:
-                    cadena = getCadena("Ingrese una hora",INGRESE_DATOS);
+                    cadena = getCadena("Ingrese una hora", INGRESE_DATOS);
                     ExpresionesRegulares.validarHora(cadena);
+                    break;
+                case 9:
+                    cadena = getCadena("Ingrese un numero telefonico", INGRESE_DATOS);
+                    ExpresionesRegulares.validarNumeroTelefonico(cadena);
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opción " + option + " no valida intente de nuevo", "Opción no valida", JOptionPane.INFORMATION_MESSAGE);
