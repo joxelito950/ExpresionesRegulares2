@@ -102,8 +102,8 @@ public class ExpresionesRegulares {
         Matcher matcher = patron.matcher(cadena);
         if (matcher.find()) {
             mostrarMensajeExito(cadena, "la cadena es de enteros", EXITO, JOptionPane.DEFAULT_OPTION);
-        }else{
-            mostrarMensajeExito(cadena,"la cadena no es de numeros enteros", FAIL,JOptionPane.ERROR_MESSAGE);
+        } else {
+            mostrarMensajeExito(cadena, "la cadena no es de numeros enteros", FAIL, JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -111,9 +111,19 @@ public class ExpresionesRegulares {
         Pattern patron = Pattern.compile("^\\d*(\\.\\d*)?$");
         Matcher matcher = patron.matcher(cadena);
         if (matcher.find()) {
-            mostrarMensajeExito(cadena, "la cadena es de enteros", EXITO, JOptionPane.DEFAULT_OPTION);
-        }else{
-            mostrarMensajeExito(cadena,"la cadena no es de numeros enteros", FAIL,JOptionPane.ERROR_MESSAGE);
+            mostrarMensajeExito(cadena, "la cadena es de un número real", EXITO, JOptionPane.DEFAULT_OPTION);
+        } else {
+            mostrarMensajeExito(cadena, "la cadena no es de un número real", FAIL, JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    public static void validarNumeroBinario(String cadena) {
+        Pattern patron = Pattern.compile("^[0|1]{5,10}$");
+        Matcher matcher = patron.matcher(cadena);
+        if (matcher.find()) {
+            mostrarMensajeExito(cadena, "la cadena es de un número binario", EXITO, JOptionPane.DEFAULT_OPTION);
+        } else {
+            mostrarMensajeExito(cadena, "la cadena no es de un número binario", FAIL, JOptionPane.ERROR_MESSAGE);
         }
     }
 }
