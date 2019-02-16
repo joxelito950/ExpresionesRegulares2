@@ -22,6 +22,10 @@ public class Menu {
                 "3.Validar un Entero\n" +
                 "4.Validar un numero Real\n" +
                 "5.Validar numero binario\n" +
+                "6.Validar abbabb\n" +
+                "7.Validar dirección\n" +
+                "8.Validar formato de hora\n" +
+                "9.Validar numero telefonico" +
                 "";
         String cadena;
         int option = 0;
