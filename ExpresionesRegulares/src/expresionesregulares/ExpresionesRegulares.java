@@ -136,5 +136,15 @@ public class ExpresionesRegulares {
             mostrarMensajeExito(cadena, "la cadena no es abbabb", FAIL, JOptionPane.ERROR_MESSAGE);
         }
     }
+
+    public static void validarDireccion(String cadena) {
+        Pattern patron = Pattern.compile("^()$");
+        Matcher matcher = patron.matcher(cadena);
+        if (matcher.find()) {
+            mostrarMensajeExito(cadena, "la cadena es una dirección", EXITO, JOptionPane.DEFAULT_OPTION);
+        } else {
+            mostrarMensajeExito(cadena, "la cadena no es una dirección", FAIL, JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }
 
