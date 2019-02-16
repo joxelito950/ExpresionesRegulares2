@@ -25,7 +25,7 @@ public class Menu {
                 "6.Validar abbabb\n" +
                 "7.Validar dirección\n" +
                 "8.Validar formato de hora\n" +
-                "9.Validar numero telefonico" +
+                "9.Validar numero telefonico\n" +
                 "";
         String cadena;
         int option = 0;
@@ -62,6 +62,9 @@ public class Menu {
             try {
                 return Integer.parseInt(option);
             } catch (Exception e) {
+                if ("null".equals(e.getMessage())) {
+                    return 0;
+                }
                 JOptionPane.showMessageDialog(null, "Debe ingresar un numero entero\n" + e.getMessage(), "Error", JOptionPane.ERROR);
             }
         } while (true);
