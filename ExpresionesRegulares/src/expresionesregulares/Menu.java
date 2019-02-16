@@ -34,6 +34,8 @@ public class Menu {
         do {
             option = obtenerNumeroPorEntrada("Menu", menu);
             switch (option) {
+                case  0:
+                    break;
                 case 1:
                     cadena = getCadena("Ingrese la cadena de risa", INGRESE_DATOS);
                     ExpresionesRegulares.validarRisa(cadena);
