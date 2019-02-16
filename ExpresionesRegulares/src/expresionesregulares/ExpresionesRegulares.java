@@ -88,7 +88,7 @@ public class ExpresionesRegulares {
     }
 
     public static void validarNumerosDuplicadosAlFinal(String cadena) {
-        Pattern patron = Pattern.compile("([00]|[11]|[22]|[33]|[44]|[55]|[66]|[77]|[88]|[99])$");
+        Pattern patron = Pattern.compile("^\\d*([00]|[11]|[22]|[33]|[44]|[55]|[66]|[77]|[88]|[99])$");
         Matcher matcher = patron.matcher(cadena);
         if (matcher.find()) {
             mostrarMensajeExito(cadena, "la cadena finaliza con 2 numeros repeditos", EXITO, JOptionPane.DEFAULT_OPTION);
