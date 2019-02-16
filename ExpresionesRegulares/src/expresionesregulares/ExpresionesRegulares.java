@@ -126,5 +126,15 @@ public class ExpresionesRegulares {
             mostrarMensajeExito(cadena, "la cadena no es de un número binario", FAIL, JOptionPane.ERROR_MESSAGE);
         }
     }
+
+    public static void validarabbabb(String cadena) {
+        Pattern patron = Pattern.compile("^[abb]{2}$");
+        Matcher matcher = patron.matcher(cadena);
+        if (matcher.find()) {
+            mostrarMensajeExito(cadena, "la cadena es abbabb", EXITO, JOptionPane.DEFAULT_OPTION);
+        } else {
+            mostrarMensajeExito(cadena, "la cadena no es abbabb", FAIL, JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }
 

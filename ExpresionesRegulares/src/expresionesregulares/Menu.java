@@ -54,6 +54,10 @@ public class Menu {
                     cadena =getCadena("Ingrese un número binario",INGRESE_DATOS);
                     ExpresionesRegulares.validarNumeroBinario(cadena);
                     break;
+                case 6:
+                    cadena = getCadena("Ingrese abbabb",INGRESE_DATOS);
+                    ExpresionesRegulares.validarabbabb(cadena);
+                    break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opción " + option + " no valida intente de nuevo", "Opción no valida", JOptionPane.INFORMATION_MESSAGE);
                     break;
